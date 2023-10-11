@@ -2,16 +2,36 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Log-In</title></head>
+	<title>Log-In</title>
+	<style>
+		body{
+			background-color: black; color: white;
+		}
+		div {
+			width : 180px;
+			height : 100px;
+			margin-top : 12%;
+			margin-left : 33%;
+			margin-right : 33%;
+			margin-bottom : 12%;
+			border-width : 3px;
+			padding : 70px;
+			border-color : black;
+			border-style : solid;
+		}
+	</style>
+</head>
 <body>
-	<h3 title="로그인">로그인</h3>
+	<h3 title="로그인" style="color:white">로그인</h3>
 	<hr>
-	<form name="login_form" method="get">
-	<label>
-		<label>사용자 ID : <input type="text" size="15" value=""></label><br>
-		<label>비밀 번호 : <input type="password" size="15" value=""></label>
-		<input type="submit" value="로그인"><br>
-		아이디 저장 <input type="checkbox" value="1">
-	</label>
-	</form>
+	<div>
+		<form name="login_form" method="get">
+		<label>
+			<label>사용자 ID : <input type="text" size="15" value=""></label><br>
+			<label>비밀 번호 : <input type="password" size="15" value=""></label>
+			<input type="submit" value="로그인"><br>
+			아이디 저장 <input type="checkbox" value="1">
+		</label>
+		</form>
+	</div>
 </body>
