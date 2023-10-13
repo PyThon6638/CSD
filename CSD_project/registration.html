@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<style>
+		@import url(project_stylesheet.css);
+
+		div {width : 180px;
+			height : 100px;
+			margin-top : 12%;
+			margin-left : 33%;
+			margin-right : 33%;
+			margin-bottom : 12%;
+			border-width : 3px;
+			padding : 70px;
+			border-color : black;
+			border-style : solid;
+		}
+
+	</style>
 	<meta charset="utf-8">
 	<title>registration</title></head>
 <body>
-	<h3 title="registration">회원가입</h3>
+	<h1 title="Stum" style="color: white; text-align: left; display: inline"><a href="project.html" target="_self" style="color: white">Stum</a></h1>
+	<h1 title="회원가입" style="text-align: right; color: white; display: inline; margin-left: 85%">회원가입</h1>
 	<hr>
+	<div>
 	<form name="registration_form" method="get">
 		<label>
 			<label>사용자 ID : <input type="text" size="15" value=""></label><br>
@@ -13,7 +31,8 @@
 			<label>비밀 번호 확인 : <input type="password" size="15" value=""></label><br>
 			<label>email : <input type="text" size="15" value="" placeholder="id@host"></label><br>
 			<label>생년월일 <input type="date" value=""></label><br>
-			<input type="submit" value="로그인"><br>
+			<input type="submit" value="회원가입"><br>
 		</label>
 	</form>
+	</div>
 </body>

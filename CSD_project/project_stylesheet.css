@@ -1,8 +1,11 @@
-hr {border : 5px solid black;}
+hr {border : 2px solid white;}
 table {margin-left : 33%; margin-right:33%; margin-top:5%; margin-bottom:5%}
 body {background-color : black; color: white;}
 a{
 	text-decoration-line: none;
 	
+}
+a:hover{
+	font-size : 1.2em;
 }
 

@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script>
+		let discription="Hollow Knight에서 자신만의 길을 개척하세요! 폐허가 된 광대한 곤충과 영웅 왕국을 통해 펼쳐지는 장대한 액션 모험입니다. 손으로 그린 ​​클래식 2D 스타일로 구불구불한 동굴을 탐험하고, 오염된 생명체와 싸우고, 기괴한 벌레와 친구가 되어보세요."
+		function DC()
+		{
+			let i=0;
+			while(i<discription.length)
+			{
+				document.write(discription[i]);
+				if (i%40==0 && i!=0)
+					document.write("<br>");
+				i++;
+			}
+		}
+	</script>
 	<meta charset="utf-8">
 	<title>Hollow Knight</title></head>
+	<style>
+		@import url(project_stylesheet.css);
+	</style>
 <body>
-	<h1 title="Hollow Knight">Hollow Knight</h1>
+	<h1 title="Stum" style="color: white; text-align: left; display: inline"><a href="project.html" target="_self" style="color: white">Stum</a></h1>
 	<hr>
+	<br>
+	<div style="border-width: 2px; border-color: white; width: 600px; height: 300px; border-style: solid; display: inline-block;">
 	<video width="600" height="300" controls>
 		<source src="media/HollowKnight.webm" type="video/webm">
 	</video>
+	</div>
+	<img src="media/hollowknight.jfif" width="400" height="300">
+	<br>
+	<script>
+		DC();
+	</script>
 	<hr>
+	
 </body>
 

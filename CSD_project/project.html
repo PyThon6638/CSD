@@ -6,35 +6,59 @@
 	<style>
 		@import url(project_stylesheet.css);
 	</style>
+
+	<script>
+		function Game(name, price)
+		{
+			this.name=name;
+			this.price=price;
+		}
+	</script>
 </head>
 <body>
-	<h1 title="Stum">Stum</h1>
+	<script>
+		let Games=[new Game("HollowKnight",10000), new Game("Undertale",20000), new Game("To The Moon",30000)];
+
+	</script>
+	<h1 title="Stum"><a href="project.html" target="_self" style="color: white">Stum</h1>
 	<h5>
 	<a href="login.html" target="_self"><span style="color: white">login</span> </a>
 	<a href="registration.html" target="_self"> <span style="color: white">registration</span> </a>
 	</h5>
 	<hr>
+	<h2>추천 게임<h3>
+	<div align="center">
+		<form>
+			<span style="color: white">가격 : </span>
+			<select name="price">
+				<option value="1">10000원 이하</option>
+				<option value="2">20000원 이하</option>
+				<option value="3">30000원 이하</option>
+				<option value="4" selected>전체</option>
+			</select>
+		</form>
+	</div>
 	<div style="background-color:black; padding:20px;">
-		<table border="1">
+		<table border="1" align="center">
 			<caption>게임 목록</caption>
 			<thead>
 				<tr><th>썸네일</th><th>게임명</th><th>가격</th></tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td><img src="media/hollowknight.jpg" width="200" height="120"></td>
+					<td style="width: 400px; height: 130px"><img src="media/hollowknight.jfif" width="400" height="120"></td>
 					<td><a href="hollowknight.html" target="_self"><span style="color: white">Hollow Knight</span></a></td>
-					<td>1000</td>
+					<td>10000</td>
 				</tr>
 				<tr>
-					<td><img src="media/undertale.jpg" width="200" height="120"></td>
+					<td style="width: 400px; height: 130px"><img src="media/undertale.png" width="400" height="120"></td>
 					<td><a href="undertale.html" target="_self"><span style="color: white">Undertale</span></a></td>
-					<td>1500</td>
+					<td>20000</td>
 				</tr>
 				<tr>
-					<td><img src="media/tothemoon.jpg" width="200" height="120"></td>
+					<td style="width: 400px; height: 130px"><img src="media/tothemoon.jfif" width="400" height="120"></td>
 					<td><a href="tothemoon.html" target="_self"><span style="color: white">To The Moon</span></a></td>
-					<td>1300</td>
+					<td>30000</td>
 				</tr>
 			</tbody>
 		</table>
