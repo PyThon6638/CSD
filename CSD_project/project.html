@@ -8,16 +8,69 @@
 	</style>
 
 	<script>
-		function Game(name, price)
+		function Game(name, price, img_url)
 		{
 			this.name=name;
 			this.price=price;
+			this.img_url=img_url;
+		}
+
+
+
+		function ChangeByPrice(max_price)
+		{
+			let tr;
+			let name;
+			let button;
+
+			button=document.getElementsByClassName("price");
+
+			if (max_price==10000)
+			{
+				button[0].style.backgroundColor="yellow";
+				button[1].style.backgroundColor="white";
+				button[2].style.backgroundColor="white";
+			}
+			else if (max_price==20000)
+			{
+				button[0].style.backgroundColor="white";
+				button[1].style.backgroundColor="yellow";
+				button[2].style.backgroundColor="white";
+			}
+			if (max_price==30000)
+			{
+				button[0].style.backgroundColor="white";
+				button[1].style.backgroundColor="white";
+				button[2].style.backgroundColor="yellow";
+			}
+
+			for (let i=0; i<GameCount; i++)
+			{
+				if (Games[i].price>max_price)
+				{
+					tr=document.getElementsByClassName(Games[i].name);
+					tr[0].src=null;
+					tr[1].style.color="black";
+					tr[2].style.color="black";
+
+
+				}
+				else
+				{
+					tr=document.getElementsByClassName(Games[i].name);
+					tr[0].src=Games[i].img_url;
+					tr[1].style.color="white";
+					tr[2].style.color="white";
+				}
+			}
+
 		}
 	</script>
 </head>
 <body>
 	<script>
-		let Games=[new Game("HollowKnight",10000), new Game("Undertale",20000), new Game("To The Moon",30000)];
+		let Games=[new Game("HollowKnight",10000,"media/hollowknight.jfif"), new Game("Undertale",20000,"media/undertale.png"), new Game("To The Moon",30000,"media/tothemoon.jfif")];
+		let GameCount=3;
 
 	</script>
 	<h1 title="Stum"><a href="project.html" target="_self" style="color: white">Stum</h1>
@@ -29,13 +82,10 @@
 	<h2>추천 게임<h3>
 	<div align="center">
 		<form>
-			<span style="color: white">가격 : </span>
-			<select name="price">
-				<option value="1">10000원 이하</option>
-				<option value="2">20000원 이하</option>
-				<option value="3">30000원 이하</option>
-				<option value="4" selected>전체</option>
-			</select>
+			
+			<input class="price"; type="button"; value="10000원 이하"; onclick="ChangeByPrice(10000)">
+			<input class="price"; type="button"; value="20000원 이하"; onclick="ChangeByPrice(20000)">
+			<input class="price"; type="button"; value="30000원 이하"; onclick="ChangeByPrice(30000)">
 		</form>
 	</div>
 	<div style="background-color:black; padding:20px;">
@@ -46,22 +96,23 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td style="width: 400px; height: 130px"><img src="media/hollowknight.jfif" width="400" height="120"></td>
-					<td><a href="hollowknight.html" target="_self"><span style="color: white">Hollow Knight</span></a></td>
-					<td>10000</td>
+					<td style="width: 400px; height: 130px"><img class="Undertale"; src="media/undertale.png" width="400" height="120"></td>
+					<td><a href="undertale.html" target="_self"><span class="Undertale"; style="color: white">Undertale</span></a></td>
+					<td class="Undertale";>20000</td>
 				</tr>
 				<tr>
-					<td style="width: 400px; height: 130px"><img src="media/undertale.png" width="400" height="120"></td>
-					<td><a href="undertale.html" target="_self"><span style="color: white">Undertale</span></a></td>
-					<td>20000</td>
+					<td style="width: 400px; height: 130px"><img class="HollowKnight"; src="media/hollowknight.jfif"; width="400" height="120"></td>
+					<td><a href="hollowknight.html" target="_self"><span class="HollowKnight"; style="color: white">Hollow Knight</span></a></td>
+					<td class="HollowKnight";>10000</td>
 				</tr>
 				<tr>
-					<td style="width: 400px; height: 130px"><img src="media/tothemoon.jfif" width="400" height="120"></td>
-					<td><a href="tothemoon.html" target="_self"><span style="color: white">To The Moon</span></a></td>
-					<td>30000</td>
+					<td style="width: 400px; height: 130px"><img class="To The Moon"; src="media/tothemoon.jfif" width="400" height="120"></td>
+					<td><a href="tothemoon.html" target="_self"><span class="To The Moon" style="color: white">To The Moon</span></a></td>
+					<td class="To The Moon";>30000</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 	<hr>
 </body>
+</html>
