@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Stum</title>
+	<style>
+		@import url(project_stylesheet.css);
+	</style>
+	<script>
+		let GameSrc1=["media/up.PNG","media/down.PNG"];
+		//let GameSrc2=["media/player_up.PNG","media/player_down.PNG"];
+		let upper=true;
+		let started=false;
+		let score=0;
+
+		let objUpper=true;
+		let playerUpper=true;
+
+		let time=20;
+		let bestscore=0;
+
+		
+
+		setInterval(timer,1000);
+
+		function timer()
+		{
+			let obj2=document.getElementById("2");
+			if (started)
+			{
+				time--;
+				if (time<=0)
+				{
+					started=false;
+					if (score>bestscore)
+					{
+
+						bestscore=score;
+						document.getElementById("bestscore").innerHTML=bestscore;
+					}
+					score=0;
+					obj2.src="";
+				}
+			}
+			else
+			{
+				time=20;
+			}
+		}
+
+		
+
+		window.onkeydown=function(e){
+				//let player=document.getElementById("1");
+				let r=Math.random();
+				
+
+				let obj=document.getElementById("2");
+				switch(e.key)
+				{
+					case "ArrowUp":
+						
+						playerUpper=true;
+						if (started)
+						{
+							if ((objUpper==true && playerUpper==false) || (objUpper==false && playerUpper==true))
+							{
+								score++;
+							}
+							
+
+							if (r>0.5)
+							{
+								objUpper=true;
+								obj.src=GameSrc1[0];
+							}
+							else
+							{
+								objUpper=false;
+								obj.src=GameSrc1[1];
+							}
+
+							
+							document.getElementById("score").innerHTML=score;
+
+						}
+						break;
+						
+					case "ArrowDown":
+
+						
+						playerUpper=false;
+						if (started)
+						{
+							if ((objUpper==true && playerUpper==false) || (objUpper==false && playerUpper==true))
+							{
+								score++;
+							}
+							
+
+							if (r>0.5)
+							{
+								objUpper=true;
+								obj.src=GameSrc1[0];
+							}
+							else
+							{
+								objUpper=false;
+								obj.src=GameSrc1[1];
+							}
+
+							
+
+							document.getElementById("score").innerHTML=score;
+
+						}
+						break;
+					case "ArrowRight":
+						if (started==false)
+						{
+							started=true;
+							obj.src=GameSrc1[0];
+
+						}
+						break;
+
+
+						
+
+
+				}
+			}
+
+		
+
+	</script>
+</head>
+<body>
+	<h1 title="Stum"><a href="project.html" target="_self" style="color: white">Stum</h1></a>
+	<h2>오른쪽 방향키를 누르면 시작, 윗쪽/아랫쪽 방향키로 플레이 가능<h2><br>
+	<h2 style="display: inline;">Score : </h2><h2 style="display: inline;" id="score"; style="color: white"></h2><br>
+	<h2 style="display: inline;">BestScore : </h2><h2 style="display: inline;" id="bestscore"; style="color: white"></h2>
+	<table border="0">
+		<tr>
+		<td><img id="2"; src=""; width="300"; height="300">
+		</tr>
+	</table>
+</body>
